@@ -1,0 +1,8 @@
+link to slack
+add back contact page
+write "Running Staticcheck" docs
+minify html (hugo --minify)
+figure out how to put patch releases in the left menu, without creating placeholder pages
+don't store sponsor logos in this repository
+don't depend on modifications to the docsy theme
+we broke our logo in twitter card/slack preview

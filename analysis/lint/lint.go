@@ -58,6 +58,8 @@ const (
 type Documentation struct {
 	Title      string
 	Text       string
+	Before     string
+	After      string
 	Since      string
 	NonDefault bool
 	Options    []string
@@ -66,13 +68,16 @@ type Documentation struct {
 
 func Markdownify(m map[string]*Documentation) map[string]*Documentation {
 	for _, v := range m {
-		v.Title = toMarkdown(v.Title)
-		v.Text = toMarkdown(v.Text)
+		v.Title = strings.TrimSpace(toMarkdown(v.Title))
+		v.Text = strings.TrimSpace(toMarkdown(v.Text))
+		v.Before = strings.TrimSpace(v.Before)
+		v.After = strings.TrimSpace(v.After)
 	}
 	return m
 }
 
 func toMarkdown(s string) string {
+	s = strings.ReplaceAll(s, `\'''`, "```")
 	return strings.ReplaceAll(s, `\'`, "`")
 }
 

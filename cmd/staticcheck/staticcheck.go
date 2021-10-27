@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"honnef.co/go/tools/codereview"
 	"honnef.co/go/tools/lintcmd"
 	"honnef.co/go/tools/lintcmd/version"
 	"honnef.co/go/tools/quickfix"
@@ -21,6 +22,7 @@ func main() {
 	fs := cmd.FlagSet()
 	debug := fs.String("debug.unused-graph", "", "Write unused's object graph to `file`")
 	qf := fs.Bool("debug.run-quickfix-analyzers", false, "Run quickfix analyzers")
+	cr := fs.Bool("debug.run-codereview-analyzers", false, "Run codereview analyzers")
 
 	cmd.ParseFlags(os.Args[1:])
 
@@ -31,6 +33,9 @@ func main() {
 
 	if *qf {
 		cmd.AddAnalyzers(quickfix.Analyzers...)
+	}
+	if *cr {
+		cmd.AddAnalyzers(codereview.Analyzers...)
 	}
 
 	if *debug != "" {

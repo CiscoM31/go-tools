@@ -1,0 +1,156 @@
+baseURL = "https://staticcheck.io"
+languageCode = 'en-us'
+title = 'Staticcheck'
+theme = 'docsy'
+navbar_logo = false
+disableKinds = ['taxonomy', 'term']
+disableAliases = false
+enableInlineShortcodes = true
+
+[outputs]
+home = ["HTML", "REDIR"]
+section = ["HTML"]
+
+[mediaTypes]
+[mediaTypes."text/netlify"]
+delimiter = ""
+
+[outputFormats]
+[outputFormats.REDIR]
+mediaType = "text/netlify"
+baseName = "_redirects"
+isPlainText = true
+notAlternative = true
+
+# This output format has an empty (zero bytes long) template, which
+# causes Hugo to not generate a file. this is used for placeholder
+# pages.
+[outputFormats.none]
+mediaType = "text/plain"
+isPlainText = true
+notAlternative = true
+
+[markup.goldmark.renderer]
+unsafe= true
+
+[menu]
+[[menu.main]]
+  name = 'GitHub'
+  pre = "<i class='fab fa-github'></i>"
+  url = 'https://github.com/dominikh/go-tools'
+  weight = 999
+
+[markup]
+  [markup.highlight]
+      style = "tango"
+
+[params]
+copyrights = [
+  "© 2019 Dominik Honnef All Rights Reserved.",
+  "© 2018 Google LLC All rights reserved. Google and the Google logo are registered trademarks of Google LLC.",
+  "The Staticcheck logo was designed by <a href='https://egonelbre.com/'>Egon Elbre</a> and is based on the Go gopher, which was designed by <a href='http://reneefrench.blogspot.com/'>Renee French</a> and is licensed under the Creative Commons 3.0 Attributions license.",
+]
+description = 'Staticcheck is a state of the art linter for the Go programming language'
+images = ['/img/logo.webp']
+title = 'Staticcheck'
+
+
+[[params.sponsors]]
+  name = "AdGuard"
+  url = "https://adguard.com"
+  logo = "/img/sponsors/adguard.svg"
+
+[[params.sponsors]]
+  name = "Ardan Labs"
+  url = "https://www.ardanlabs.com"
+  logo = "/img/sponsors/ardanlabs.webp"
+
+[[params.sponsors]]
+  name = "Cockroach Labs"
+  url = "https://www.cockroachlabs.com/"
+  logo = "/img/sponsors/cockroachlabs.webp"
+
+[[params.sponsors]]
+  name = "DeepSource"
+  url = "https://deepsource.io"
+  logo = "/img/sponsors/deepsource.webp"
+
+[[params.sponsors]]
+  name = "Fastly"
+  url = "https://www.fastly.com/"
+  logo = "/img/sponsors/fastly.svg"
+
+[[params.sponsors]]
+  name = "Go"
+  url = "https://go.dev"
+  logo = "/img/sponsors/golang.svg"
+
+[[params.sponsors]]
+  name = "Google"
+  url = "https://google.com"
+  logo = "/img/sponsors/google.svg"
+
+[[params.sponsors]]
+  name = "Liftoff"
+  url = "https://liftoff.io"
+  logo = "/img/sponsors/liftoff.svg"
+
+[[params.sponsors]]
+  name = "Molecula"
+  url = "https://molecula.com"
+  logo = "/img/sponsors/molecula.webp"
+
+[[params.sponsors]]
+  name = "NATS"
+  url = "https://nats.io"
+  logo = "/img/sponsors/nats.svg"
+
+[[params.sponsors]]
+  name = "Northvolt"
+  url = "https://northvolt.com"
+  logo = "/img/sponsors/northvolt.svg"
+
+[[params.sponsors]]
+  name = "Sourcegraph"
+  url = "https://sourcegraph.com"
+  logo = "/img/sponsors/sourcegraph.svg"
+
+[params.links]
+# End user relevant links. These will show up on left side of footer and in the community page if you have one.
+[[params.links.user]]
+  name ="GitHub Discussions"
+  url = "https://github.com/google/docsy/discussions"
+  icon = "fab fa-github"
+  desc = "Discussion and help from your fellow users"
+[[params.links.user]]
+  name = "User mailing list"
+  url = "https://groups.google.com/forum/#!forum/docsy-users"
+  icon = "fa fa-envelope"
+  desc = "Sign up for Docsy announcements"
+
+[[params.links.user]]
+  name ="Twitter"
+  url = "https://twitter.com/docsydocs"
+  icon = "fab fa-twitter"
+  desc = "Follow us on Twitter to get the latest news!"
+[[params.links.user]]
+  name = "Stack Overflow"
+  url = "https://stackoverflow.com/questions/tagged/docsy"
+  icon = "fab fa-stack-overflow"
+  desc = "Practical questions and curated answers"
+# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+[[params.links.developer]]
+  name = "GitHub"
+  url = "https://github.com/google/docsy"
+  icon = "fab fa-github"
+  desc = "Development takes place here!"
+# [[params.links.developer]]
+  # name = "Slack"
+  # url = "https://example.org/slack"
+  # icon = "fab fa-slack"
+        # desc = "Chat with other project developers"
+# [[params.links.developer]]
+  # name = "Developer mailing list"
+  # url = "https://example.org/mail"
+  # icon = "fa fa-envelope"
+        # desc = "Discuss development issues around the project"
